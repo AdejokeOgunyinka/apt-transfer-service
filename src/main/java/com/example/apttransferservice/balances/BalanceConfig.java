@@ -12,13 +12,11 @@ public class BalanceConfig {
     CommandLineRunner commandLineRunner (BalanceRepository repository) {
         return args -> {
             Balance one = new Balance(
-                    1L,
                     "3104841829",
                     300000.00
             );
 
             Balance two = new Balance(
-                    2L,
                     "3112337668",
                     258000.00
             );

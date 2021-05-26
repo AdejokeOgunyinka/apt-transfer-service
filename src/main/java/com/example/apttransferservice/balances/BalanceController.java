@@ -1,10 +1,7 @@
 package com.example.apttransferservice.balances;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -18,13 +15,13 @@ public class BalanceController {
         this.balanceService = balanceService;
     }
 
-    @GetMapping(path = "/")
+    @GetMapping
     public List<Balance> getBalances() {
         return balanceService.getBalances();
     }
 
-    @GetMapping
-    public Double getBalance(@RequestParam String account_nr) {
+    @GetMapping(path = "{account_nr}")
+    public Double getBalance(@PathVariable("account_nr") String account_nr) {
         return balanceService.getBalance(account_nr);
     }
 

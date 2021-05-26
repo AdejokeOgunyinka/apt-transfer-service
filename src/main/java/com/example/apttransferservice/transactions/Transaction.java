@@ -9,7 +9,7 @@ public class Transaction {
     @SequenceGenerator(
             name = "transaction_sequence",
             sequenceName = "transaction_sequence",
-            allocationSize = 5
+            allocationSize = 1
     )
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE,
@@ -19,6 +19,9 @@ public class Transaction {
     private Double amount;
     private String account_nr;
     private String type;
+
+    public Transaction() {
+    }
 
     public Transaction(Long reference, Double amount, String account_nr, String type) {
         this.reference = reference;

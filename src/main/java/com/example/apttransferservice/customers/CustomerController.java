@@ -15,7 +15,7 @@ public class CustomerController {
         this.customerService = customerService;
     }
 
-    @GetMapping(path = "/")
+    @GetMapping
     public List<Customer> getCustomers() {
         return customerService.getCustomers();
     }

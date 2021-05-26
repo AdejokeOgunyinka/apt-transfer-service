@@ -15,13 +15,13 @@ public class TransactionController {
         this.transactionService = transactionService;
     }
 
-    @GetMapping(path = "/")
+    @GetMapping
     public List<Transaction> getAllTransactions() {
         return transactionService.getTransactions();
     }
 
-    @GetMapping
-    public List<Transaction> getTransaction(@RequestParam String account_nr) {
+    @GetMapping(path = "{account_nr}")
+    public List<Transaction> getTransaction(@PathVariable("account_nr") String account_nr) {
         return transactionService.getSpecificTransactions(account_nr);
     }
 

@@ -19,7 +19,15 @@ public class Balance {
     private String account_nr;
     private Double balance;
 
+    public Balance() {
+    }
+
     public Balance(Long id, String account_nr, Double balance) {
+        this.account_nr = account_nr;
+        this.balance = balance;
+    }
+
+    public Balance(String account_nr, Double balance) {
         this.account_nr = account_nr;
         this.balance = balance;
     }
