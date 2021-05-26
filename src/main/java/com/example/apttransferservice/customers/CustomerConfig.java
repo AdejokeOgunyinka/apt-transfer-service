@@ -12,12 +12,14 @@ public class CustomerConfig {
     CommandLineRunner commandLineRunner (CustomerRepository repository) {
         return args -> {
             Customer one = new Customer(
+                    1L,
                     "Adejoke Ogunyinka",
                     "3104841829",
                     "FirstBank"
             );
 
             Customer two = new Customer(
+                    2L,
                     "Goodness Williams",
                     "3104841829",
                     "FirstBank"

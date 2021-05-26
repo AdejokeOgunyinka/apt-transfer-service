@@ -1,15 +1,25 @@
 package com.example.apttransferservice.balances;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table
 public class Balance {
+    @Id
+    @SequenceGenerator(
+            name = "balance_sequence",
+            sequenceName = "balance_sequence",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "balance_sequence"
+    )
+    private Long id;
     private String account_nr;
     private Double balance;
 
-    public Balance(String account_nr, Double balance) {
+    public Balance(Long id, String account_nr, Double balance) {
         this.account_nr = account_nr;
         this.balance = balance;
     }

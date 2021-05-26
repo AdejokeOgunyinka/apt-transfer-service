@@ -18,7 +18,7 @@ public class BalanceController {
         this.balanceService = balanceService;
     }
 
-    @GetMapping
+    @GetMapping(path = "/")
     public List<Balance> getBalances() {
         return balanceService.getBalances();
     }
@@ -27,4 +27,5 @@ public class BalanceController {
     public Double getBalance(@RequestParam String account_nr) {
         return balanceService.getBalance(account_nr);
     }
+
 }

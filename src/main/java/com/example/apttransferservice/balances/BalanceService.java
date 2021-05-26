@@ -29,12 +29,11 @@ public class BalanceService {
         balanceRepository.findBalanceByAcctNr(account_nr).setBalance(new_balance);
     }
 
-    public String setNewBalanceAfterDr(String account_nr, Double amount) {
+    public void setNewBalanceAfterDr(String account_nr, Double amount) {
         Double old_balance = balanceRepository.findBalanceByAcctNr(account_nr).getBalance();
         if (amount <= old_balance) {
             Double new_balance = old_balance - amount;
             balanceRepository.findBalanceByAcctNr(account_nr).setBalance(new_balance);
         }
-        return "Insufficient Balance";
     }
 }

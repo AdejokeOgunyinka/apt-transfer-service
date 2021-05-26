@@ -1,16 +1,26 @@
 package com.example.apttransferservice.customers;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table
 public class Customer {
+    @Id
+    @SequenceGenerator(
+            name = "customer_sequence",
+            sequenceName = "customer_sequence",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "customer_sequence"
+    )
+    private Long id;
     private String full_name;
     private String account_nr;
     private String bank_name;
 
-    public Customer(String full_name, String account_nr, String bank_name) {
+    public Customer(Long id, String full_name, String account_nr, String bank_name) {
         this.full_name = full_name;
         this.account_nr = account_nr;
         this.bank_name = bank_name;
