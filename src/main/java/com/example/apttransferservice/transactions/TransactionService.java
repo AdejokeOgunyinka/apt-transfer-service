@@ -4,6 +4,7 @@ import javassist.bytecode.StackMapTable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
@@ -20,6 +21,17 @@ public class TransactionService {
         return transactionRepository.findAll();
     }
 
+    public List<Transaction> getSpecificTransactions(String account_nr) {
+        Optional<Transaction> transactionOptional = transactionRepository.findTransactionByAcctNr
+                (account_nr);
+        if (transactionOptional.isEmpty()){
+            throw new IllegalStateException
+                    ("This account number does not exist!!");
+        }
+        return List.of(transactionOptional.get());
+    }
+
+    @Transactional
     public void addNewTransaction (Transaction transaction){
         Optional<Transaction> transactionOptional = transactionRepository.findTransactionByReference
                 (transaction.getReference());
