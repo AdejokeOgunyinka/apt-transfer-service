@@ -7,10 +7,10 @@ import javax.persistence.Table;
 @Table
 public class Customer {
     private String full_name;
-    private Integer account_nr;
+    private String account_nr;
     private String bank_name;
 
-    public Customer(String full_name, Integer account_nr, String bank_name) {
+    public Customer(String full_name, String account_nr, String bank_name) {
         this.full_name = full_name;
         this.account_nr = account_nr;
         this.bank_name = bank_name;
@@ -24,11 +24,11 @@ public class Customer {
         this.full_name = full_name;
     }
 
-    public Integer getAccount_nr() {
+    public String getAccount_nr() {
         return account_nr;
     }
 
-    public void setAccount_nr(Integer account_nr) {
+    public void setAccount_nr(String account_nr) {
         this.account_nr = account_nr;
     }
 

@@ -7,18 +7,18 @@ import javax.persistence.Table;
 @Table
 public class Transaction {
     private Long reference;
-    private Long amount;
-    private Integer account_nr;
+    private Double amount;
+    private String account_nr;
     private String type;
 
-    public Transaction(Long reference, Long amount, Integer account_nr, String type) {
+    public Transaction(Long reference, Double amount, String account_nr, String type) {
         this.reference = reference;
         this.amount = amount;
         this.account_nr = account_nr;
         this.type = type;
     }
 
-    public Transaction(Long amount, Integer account_nr, String type) {
+    public Transaction(Double amount, String account_nr, String type) {
         this.amount = amount;
         this.account_nr = account_nr;
         this.type = type;
@@ -32,19 +32,19 @@ public class Transaction {
         this.reference = reference;
     }
 
-    public Long getAmount() {
+    public Double getAmount() {
         return amount;
     }
 
-    public void setAmount(Long amount) {
+    public void setAmount(Double amount) {
         this.amount = amount;
     }
 
-    public Integer getAccount_nr() {
+    public String getAccount_nr() {
         return account_nr;
     }
 
-    public void setAccount_nr(Integer account_nr) {
+    public void setAccount_nr(String account_nr) {
         this.account_nr = account_nr;
     }
 

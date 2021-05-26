@@ -6,27 +6,27 @@ import javax.persistence.Table;
 @Entity
 @Table
 public class Balance {
-    private Integer account_nr;
-    private Long balance;
+    private String account_nr;
+    private Double balance;
 
-    public Balance(Integer account_nr, Long balance) {
+    public Balance(String account_nr, Double balance) {
         this.account_nr = account_nr;
         this.balance = balance;
     }
 
-    public Integer getAccount_nr() {
+    public String getAccount_nr() {
         return account_nr;
     }
 
-    public void setAccount_nr(Integer account_nr) {
+    public void setAccount_nr(String account_nr) {
         this.account_nr = account_nr;
     }
 
-    public Long getBalance() {
+    public Double getBalance() {
         return balance;
     }
 
-    public void setBalance(Long balance) {
+    public void setBalance(Double balance) {
         this.balance = balance;
     }
 
